@@ -4,145 +4,51 @@
     <meta name ="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>
-     Dashboard
-    </title >
-    <link rel="stylesheet"  type = "text/css" href="style.css">
-  </head>
-  <body>
+      Dashboard
+     </title >
+     <link rel="stylesheet"  type = "text/css" href="style.css">
+     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>            
+ 
+   </head>
+
+   <body>
+    <div class="sidenav">
+      <div style="margin-left: auto;
+      margin-right: auto;
+      width: 50%;">
+        <img src="https://pbs.twimg.com/profile_images/378800000639740507/fc0aaad744734cd1dbc8aeb3d51f8729_400x400.jpeg">
+      </div>
+      <div style="    text-align: center;
+      padding: 10px;
+  ">Arti Patel</div>
+      <a  href="/dashboard">Tasks</a>
+      <a class="active" href="">Documents</a>
+
+    </div>
+    
     <div class="main">
       <div class="topbar">
-        <div class="toggle">
-          <h1>User Dashboard</h1>
+        
+          User Dashboard
+          <div class="logout">LOGOUT</div>
+          </a>
         </div>
-        <!-- user image -->
-        <div class="user">
-        <img src="user.png">
-        </div>
-      </div>
+    
     
 
     <div class="projects mb-4">
       <div class="projects-inner">
         <header class="projects-header">
           <div class="title">Listed Documents</div>
-          <i class="zmdi zmdi-download"></i>
           <div style="float:right"><button onclick="onRender()">BACK</button></div>
         </header>
-        <table class="Assesment-table" id="Document">
-          <!-- <thead>
-            <tr>
-              <th>Assesments</th>
-              <th>progress</th>
-              <th>Progress</th>
-            </tr>
-          </thead>
-          <tr>
-            <td>
-            <button onclick="Assesment(1)" >Document 1</button>
-            </td>
-            <td>
-                <label><input type="radio" id='regular1' name="optradio1">Yes</label><label>&nbsp;<input type="radio" id='regular1' name="optradio1">No</label>
-            </td>
-            <td class="background background__Inprogress">
-                <div class="progress">
-                  <div class="indeterminate"></div>
-                </div>
-                <a href="#">In progress</a>
-              </td>
-          </tr>
-          <tr>
-            <td>
-         <button onclick="Assesment(2)" >Document 1</button> 
-            </td>
-            <td>
-                <label><input type="radio" id='regular2' name="optradio2">Yes</label><label>&nbsp;<input type="radio" id='regular2' name="optradio2">No</label>
-            </td>
-            <td class="background background__pass">
-                <div class="progress">
-                  <div class="indeterminate"></div>
-                </div>
-                <a href="#">Compeleted</a>
-              </td>
-          </tr>
-          <tr>
-            <td>
-                <button onclick="Assesment()" >Document 1</button> 
-                   </td>
-                   <td>
-                       <label><input type="radio" id='regular3' name="optradio3">Yes</label><label>&nbsp;<input type="radio" id='regular3' name="optradio3">No</label>
-                   </td>
-                   <td class="background background__pass">
-                    <div class="progress">
-                      <div class="indeterminate"></div>
-                    </div>
-                    <a href="#">Compeleted</a>
-                  </td>
-          </tr>
-          <tr>
-            <td>
-                <button onclick="Assesment()" >Document 1</button> 
-                   </td>
-                   <td>
-                       <label><input type="radio" id='regular4' name="optradio4">Yes</label><label>&nbsp;<input type="radio" id='regular4' name="optradio4">No</label>
-                   </td>
-
-            <td class="background background__pending">
-                <div class="progress">
-                  <div class="indeterminate"></div>
-                </div>
-                <a href="#">Pending</a>
-              </td>
-          </tr>
-          <tr>
-            <td>
-            <button onclick="Assesment()" >Document 1</button>
-            </td>
-            <td>
-                <label><input type="radio" id='regular5' name="optradio5">Yes</label><label>&nbsp;<input type="radio" id='regular5' name="optradio5">No</label>
-            </td>
-            <td class="background background__Inprogress">
-                <div class="progress">
-                  <div class="indeterminate"></div>
-                </div>
-                <a href="#">In progress</a>
-              </td>
-          </tr>
-          <tr>
-            <tr>
-                <td>
-                <button onclick="Assesment()" >Document 1</button>
-                </td>
-                <td>
-                    <label><input type="radio" id='regular6' name="optradio6">Yes</label><label>&nbsp;<input type="radio" id='regular6' name="optradio6">No</label>
-                </td>
-                <td class="background background__pass">
-                    <div class="progress">
-                      <div class="indeterminate"></div>
-                    </div>
-                    <a href="#">Compeleted</a>
-                  </td>
-              </tr>
-              <tr>
-                <tr>
-                    <td>
-                    <button onclick="Assesment()" >Document 1</button>
-                    </td>
-                    <td>
-                        <label><input type="radio" id='regular7' name="optradio7">Yes</label><label>&nbsp;<input type="radio" id='regular7' name="optradio7">No</label>
-                    </td>
-                    <td class="background background__pending">
-                        <div class="progress">
-                          <div class="indeterminate"></div>
-                        </div>
-                        <a href="#">Pending</a>
-                      </td>
-                  </tr>
-                  <tr> -->
+        <table class="Assesment-table" id ="Document">
         </table>
       </div>
     </div>
     </div>
   </body>
+  
 <script type="text/javascript" src="document.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

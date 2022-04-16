@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Assesment Form</title>
+</head>
+<body style="font-size: 20px; overflow: auto !important;">
+    <div class="container ">
+        <form action="" id="survey-form" class="assesmemt_form">
+            <header class="header">
+                <h1 id="title">
+                    Assesment Form
+                </h1>
+                <p id="description">
+                    Thank you for taking the time to help us to improve the Research
+                </p>
+                
+            </header>
+            <hr>
+            <!-- radio button section -->
+            <div class="form-group">
+                <p id="quest">1) Is this document readable?</p>
+                <div style="margin-left: 10px">
+                <label for="">
+                    <input type="radio" name="source1" value="Readable"
+                    class="inputRadio" > Readable
+                </label>
+                <label for="">
+                    <input type="radio" name="source1" value=" NOT Redable "
+                    class="inputRadio">Not Readable
+                </label>
+            </div>
+            </div>
+            <hr>
+            <div class="form-group">
+                <p id="quest">2) Do you have any concern or question about Research?</p>
+                <div style="margin-left: 10px">
+                <label for="">
+                    <input type="radio" name="source2" value="YES"
+                    class="inputRadio"> Yes
+                </label>
+                <label for="">
+                    <input type="radio" name="source2" value="NO"
+                    class="inputRadio"  >No
+                </label>
+                </div>
+            </div>
+            <hr>
+            <div class="form-group">
+                <p id="quest">3) How would you rate your overall experience on a scale of 1 to 5?</p>
+                <div style="margin-left: 10px">
+                <label for="">
+                    <input type="radio" name="source3" value="1"
+                    class="inputRadio"> 1
+                </label>
+                <label for="">
+                    <input type="radio" name="source3" value="2"
+                    class="inputRadio" >2
+                </label>
+                <label for="">
+                    <input type="radio" name="source3" value="3"
+                    class="inputRadio"  >3
+                </label>
+                <label for="">
+                    <input type="radio" name="source3" value="4"
+                    class="inputRadio" >4
+                </label>
+                <label for="">
+                    <input type="radio" name="source3" value="5"
+                    class="inputRadio" >5
+                </label>
+                </div>
+            </div>
+            <hr>
+            <div class="form-group">
+                <p id="quest">4) Define the complexity of the document?</p>
+                <div style="margin-left: 10px">
+                <label for="">
+                    <input type="radio" name="source4" value="Easy"
+                    class="inputRadio"> Easy
+                </label>
+                <label for="">
+                    <input type="radio" name="source4" value="Medium"
+                    class="inputRadio" >Medium
+                </label>
+                <label for="">
+                    <input type="radio" name="source4" value="Hard"
+                    class="inputRadio"  >Hard
+                </label>
+                </div>
+            </div>
+            <hr>
+            <div class="form-group">
+                <p id="quest">5) Give us your opinion in (100) words:</p>
+                <div style="margin-left: 10px">
+                <textarea name="feedback"  cols="30" rows="5"  id="feedback" class="textarea" placeholder="Enter your feedback here..."></textarea>
+                </div>
+            </div>
+            <hr>
+            <div class="form-group">
+                <button type="submit" id="submit" class="btn">Submit</button>
+                <button  class="btn" onclick="renderBack()">Back</button>
+            </div>
+        </form>
+
+        
+        
+    </div>
+    <script type="text/javascript" src="/form2.js"></script>
+</body>
+
+</html>

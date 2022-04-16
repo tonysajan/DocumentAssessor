@@ -26,29 +26,33 @@ const task_id= localStorage.getItem("task_id")
   function show(data) {
     let tab = 
         
-        `<tr style="background-color: green; font-size: 12px;">
+        `<tr style=" font-size: 12px;">
           <th>Documents</th>
           <th>Progress</th>
          </tr>`;
     
     // Loop to access all rows 
     for (let r of data) {
-      if(r.status=="new"){
+      if(r.status=="New"){
         tab += `<tr> 
-    <td><button onclick="Assesment(this)">${r.assess_id}</button></td>
-    <td class={value == 'new' ? 'background__pending' : 'background__Inprogress' }><div class="progress">
-    <div class="indeterminate"></div>
-  </div>
-  <a href="#">${r.status}</a></td>
+    <td style="width:80%"><button style="width:90%; text-align:left ; font-size: 14px; font-family: sans-serif; font-weight: 100;
+    " onclick="Assesment(this)"> <i class="fa fa-file-pdf-o" style="color: yellow;     padding: 10px;
+    "></i>  ${r.name}	
+   </button></td>
+    <td >
+    <div class="status status-pending">${r.status}</div>
+
+  </td>
            
   </tr>`;
       }else{
         tab += `<tr> 
-        <td><button disabled>${r.assess_id}</button></td>
-    <td class={value == 'new' ? 'background__pending' : 'background__Inprogress' }><div class="progress">
-    <div class="indeterminate"></div>
-  </div>
-  <a href="#">${r.status}</a></td>
+        <td style="width:80%"><button style="width:90%; text-align:left ; font-size: 14px; font-family: sans-serif; font-weight: 100;" disabled><i class="fa fa-file-pdf-o" style="color: #00ff32;     padding: 10px;
+        "></i>${r.name}</button></td>
+        <td >
+        <p class="status status-done">${r.status}</p>
+    
+      </td>
            
   </tr>`;
       }
