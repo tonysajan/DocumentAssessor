@@ -100,5 +100,20 @@ const registerUser = async (req, res) => {
 }
 
 
-  module.exports = {getLoginPage, getRegisterationPage, getDashboardPage, loginUser, registerUser,getAssessmentPage,getFormPage,getFormPage2
+const logoutUser = (req, res) => {
+  try{
+    const token = req.cookies.token
+    if(!token)
+      return res.json({ status: 'error', error:  "user not logged in"})
+    res.clearCookie('token');
+     res.status(200).json({status: "ok"});
+    }
+  catch(err){
+    return res.json({ status: 'error', error: err })
+  }
+}
+
+
+  module.exports = {getLoginPage, getRegisterationPage, getDashboardPage, 
+    loginUser, registerUser,getAssessmentPage,getFormPage,getFormPage2, logoutUser}
 }
