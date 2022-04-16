@@ -7,227 +7,39 @@
      Dashboard
     </title >
     <link rel="stylesheet"  type = "text/css" href="style.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>            
+
   </head>
   <body>
+    <div class="sidenav">
+      <div style="margin-left: auto;
+      margin-right: auto;
+      width: 50%;">
+        <img src="https://pbs.twimg.com/profile_images/378800000639740507/fc0aaad744734cd1dbc8aeb3d51f8729_400x400.jpeg">
+      </div>
+      <div style="    text-align: center;
+      padding: 10px;
+  ">Arti Patel</div>
+      <a class="active" href="/dashboard">Tasks</a>
+      <a  href="">Documents</a>
+    </div>
+    
     <div class="main">
       <div class="topbar">
-        <div class="toggle">
-          <h1>User Dashboard</h1>
+        
+          User Dashboard
+          <div class="logout">LOGOUT</div>
+          </a>
         </div>
-        <!-- user image -->
-        <div class="user">
-        <img src="user.png">
-        </div>
-      </div>
+    
     
 
     <div class="projects mb-4">
       <div class="projects-inner">
         <header class="projects-header">
           <div class="title">Listed Tasks</div>
-          <i class="zmdi zmdi-download"></i>
-          <div style="float:right"><button onclick="onRender()">BACK</button></div>
         </header>
         <table class="projects-table" id ="employees">
-           <!-- <thead></thead>
-           <tbody></tbody> -->
-           <!-- <tr>
-               <th>Assesment Task</th>
-              <th>Description</th>
-              <th>Amount of resources</th>
-              <th>Instructional Material</th> -->
-              <!-- <th class="text-right">Actions</th>
-            </tr>
-          
-          <tr> --> 
-            <!-- <td>
-              <p>Task1</p>
-              
-            </td>
-            <td>
-              <p>**</p>
-              <p class="text-danger">**</p>
-            </td>
-            <td class="member">
-              
-              <div class="member-info">
-                <p>10</p>
-                
-              </div>
-            </td>
-            <td>
-              <p>PDF</p>
-              
-            </td>
-            <td class="status">
-              <span class="status-text status-orange">In progress</span>
-            </td> -->
-            <!-- <td>
-                <button onclick="onSignUp()">SignUP</button>
-            </td>
-          </tr> -->
-          <!-- <tr class="danger-item">
-            <td>
-              <p>Task1</p>
-              
-            </td>
-            <td>
-              <p>**</p>
-              <p class="text-danger">**</p>
-            </td>
-            <td class="member">
-              
-              <div class="member-info">
-                <p>10</p>
-                
-              </div>
-            </td>
-            <td>
-              <p>PDF</p>
-              
-            </td>
-            <td class="status">
-              <span class="status-text status-red">DONE</span>
-            </td>
-            <td>
-              <button onclick="onSignUp()">SignUP</button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p>Task1</p>
-              
-            </td>
-            <td>
-              <p>**</p>
-              <p class="text-danger">**</p>
-            </td>
-            <td class="member">
-              
-              <div class="member-info">
-                <p>10</p>
-                
-              </div>
-            </td>
-            <td>
-              <p>PDF</p>
-              
-            </td>
-            <td class="status">
-              <span class="status-text status-orange">In progress</span>
-            </td>
-            <td>
-              <button onclick="onSignUp()">SignUP</button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p></p>
-              
-            </td>
-            <td>
-              <p>**</p>
-              <p class="text-danger">**</p>
-            </td>
-            <td class="member">
-             
-              <div class="member-info">
-                <p>10</p>
-                
-              </div>
-            </td>
-            <td>
-              <p>PDF</p>
-              
-            </td>
-            <td class="status">
-              <span class="status-text status-blue">PENDING</span>
-            </td>
-            <td>
-              <button onclick="onSignUp()">SignUP</button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p>Task1</p>
-              
-            </td>
-            <td>
-              <p>**</p>
-              <p class="text-danger">**</p>
-            </td>
-            <td class="member">
-            
-              <div class="member-info">
-                <p>10</p>
-                
-              </div>
-            </td>
-            <td>
-              <p>PDF</p>
-              
-            </td>
-            <td class="status">
-              <span class="status-text status-orange">In progress</span>
-            </td>
-            <td>
-              <button onclick="onSignUp()">SignUP</button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p>Task1</p>
-              
-            </td>
-            <td>
-              <p>**</p>
-              <p class="text-danger">**</p>
-            </td>
-            <td class="member">
-              
-              <div class="member-info">
-                <p>10</p>
-                
-              </div>
-            </td>
-            <td>
-              <p>PDF</p>
-              
-            </td>
-            <td class="status">
-              <span class="status-text status-blue">PENDING</span>
-            </td>
-            <td>
-              <button onclick="onSignUp()">SignUP</button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p>Task1</p>
-              
-            </td>
-            <td>
-              <p>**</p>
-              <p class="text-danger">**</p>
-            </td>
-            <td class="member">
-             
-              <div class="member-info">
-                <p>10</p>
-                
-              </div>
-            </td>
-            <td>
-              <p>PDF</p>
-              
-            </td>
-            <td class="status">
-              <span class="status-text status-blue">PENDING</span>
-            </td>
-            <td>
-              <button onclick="onSignUp()">SignUP</button>
-            </td>
-          </tr> -->
         </table>
       </div>
     </div>

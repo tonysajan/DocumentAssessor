@@ -21,7 +21,7 @@ getapi(api_url);
 function show(data) {
   let tab = 
       
-      `<tr style="background-color: black; font-size: 16px;">
+      `<tr>
         <th>Assesment Task</th>
         <th>Description</th>
         <th>Amount of resources</th>
@@ -31,27 +31,41 @@ function show(data) {
   
   // Loop to access all rows 
   for (let r of data) {
-    if(r.status== 'completed'){
+    if(r.status=="New"){
       tab += `<tr> 
-      <td>${r.task_name} </td>
-      <td>${r.description}</td>
-      <td>${r.amount_of_resources}</td> 
-      <td><a href='https://www.google.com/'>PDF</td> 
-      <td>
-      <button style="color:green;">Completed</button>
-      </td>         
-    </tr>`;
-  }
+  <td>${r.task_name} </td>
+  <td>${r.description}</td>
+  <td>${r.amount_of_resources}</td> 
+  <td>  <a href="${r.inst_pdf_link}">PDF</a>
+  </td>
+  <td style="text-align :center !important; width:20%">
+  <button style="border-radius: 10px; background:white; color:black;" onclick="onSignUp(this)">SignUp <i class="fa fa-sign-in"></i></button>
+  </td>         
+</tr>`;}
+else if (r.status=="Inprogress"){
+  tab += `<tr> 
+  <td>${r.task_name} </td>
+  <td>${r.description}</td>
+  <td>${r.amount_of_resources}</td> 
+  <td>  <a href="${r.inst_pdf_link}">PDF</a>
+  </td>
+  <td style="text-align :center !important; width:20%">
+  <button style="border-radius: 10px; background:white; color:orange;" onclick="onSignUp(this)">Continue <i class="fa fa-sign-in"></i></button>
+  </td>         
+</tr>`;
+}
 else{
   tab += `<tr> 
   <td>${r.task_name} </td>
   <td>${r.description}</td>
   <td>${r.amount_of_resources}</td> 
-  <td><a href='https://www.google.com/'>PDF</td> 
-  <td>
-  <button onclick="onSignUp(this)">SignUP</button>
+  <td>  <a href="${r.inst_pdf_link}">PDF</a>
+  </td>
+  <td style="text-align :center !important; width:20%">
+  <button style="border-radius: 10px; background:white; color:Green;" >Compeleted <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+  </button>
   </td>         
-</tr>`; 
+</tr>`;
 }
   }
   // Setting innerHTML as tab variable
@@ -75,6 +89,10 @@ else{
      function onRender (){
        location.href='/'
      }
+
+      function OninstPdf (r){
+        window.location= r;
+      }
   
 
   
