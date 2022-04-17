@@ -34,13 +34,13 @@ const Document = require("../model/document")
   
     try{
       const {id: taskId } = req.params
-    
-      const count = await Document.find({task_id : taskId}).countDocuments({status : "new"}).exec();
-      
+      console.log(taskId)
+      const count = await Document.find({task_id : taskId}).countDocuments({status : "New"}).exec();
+      console.log(count)
       if(count>0){
           return res.status(200).json({status: "Task not completed"});
       }
-      const task = await Task.findOneAndUpdate({task_id : taskId}, {status : "completed"});
+      const task = await Task.findOneAndUpdate({task_id : taskId}, {status : "Completed"});
       if(!task)
           return res.status(404).json({error: `No task with id: ${taskId}`})
       res.status(200).json({status: "ok"});
@@ -57,12 +57,12 @@ const Document = require("../model/document")
     const {id: taskId } = req.params
       console.log(taskId)
       
-    const task = await Task.findOneAndUpdate({ task_id : taskId}, {status : "inprogress"} );
+    const task = await Task.findOneAndUpdate({ task_id : taskId}, {status : "Inprogress"} );
 
     if(!task)
      return res.status(404).json({error: `No task with id: ${taskId}`})
-    
-    res.status(200).json({status: "inprogress"});
+    const result = await Task.findOne({ task_id : taskId});
+    res.status(200).json({status: result.status});
     }
     catch (e) {
         res.status(500).json(e);

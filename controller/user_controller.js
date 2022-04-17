@@ -116,4 +116,3 @@ const logoutUser = (req, res) => {
 
   module.exports = {getLoginPage, getRegisterationPage, getDashboardPage, 
     loginUser, registerUser,getAssessmentPage,getFormPage,getFormPage2, logoutUser}
-}

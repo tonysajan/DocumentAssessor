@@ -28,11 +28,12 @@ const changeDocumentStatusToCompletetd = async (req, res) => {
     
   if(Assessment.find({assess_id : docId}))
     {
-  const doc = await Document.findOneAndUpdate({ assess_id : docId}, {status : "completed"} );
+  const doc = await Document.findOneAndUpdate({ assess_id : docId}, {status : "Completed"} );
   if(!doc)
-   return res.status(404).json({error: `No document with id: ${docId}`})
-  
-  res.status(200).json({status: "ok"});
+    return res.status(404).json({error: `No document with id: ${docId}`})
+  const result = await Document.findOne({ assess_id : docId});
+
+  res.status(200).json({status: result.status});
   }
 }catch (e) {
       res.status(500).json(e);
