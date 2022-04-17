@@ -18,6 +18,8 @@ const getapi = async (req, res) => {
 // Calling that async function
 getapi(api_url);
 
+
+
 function show(data) {
   let tab = 
       

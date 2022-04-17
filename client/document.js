@@ -2,9 +2,19 @@
 
 
 const task_id= localStorage.getItem("task_id")
-//localStorage.clear();
+const patchApiUrl = '/TaskStatusOnSignUp/' + task_id;
 
-  // Defining async function
+const patchApi = async (req, res) => {
+	const response = await fetch(req, {
+    method : 'PATCH',
+    headers : {'Content-Type': 'application/json'},
+}).then(res => res.json())
+
+	console.log(response);
+}
+
+patchApi(patchApiUrl);
+
   
   const getdocurl = '/document/'+ task_id  
   const getapi = async (req, res) => {

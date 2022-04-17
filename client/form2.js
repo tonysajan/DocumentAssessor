@@ -36,7 +36,7 @@ const submit_form = document.getElementById('survey-form')
                     headers : {'Content-Type': 'application/json'},
                 }).then(res => res.json())
                 
-                if(doc_status.status=="completed")
+                if(doc_status.status=="Completed")
                     console.log("document status updated to completed")
                 else
                     console.log("error doc status")
