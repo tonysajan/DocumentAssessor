@@ -4,19 +4,22 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
+		<title>Register</title>
+		<link rel="stylesheet"  type = "text/css" href="login.css">
 	</head>
 	<body>
-		<h1>Registration</h1>
-		<form id="reg-form">
-			<input type="text" autocomplete="off" id="username" placeholder="Username" /><br><br>
-			<input type="password" autocomplete="off" id="password" placeholder="Password" /><br><br>
-			<input type="submit" value="Submit Form" />
-		</form>
-		<br><br>
-		<a href="/">Login</a>
-
-		<script type="text/javascript" src="/client/register.js"></script>
-
-    </body>
+<P>Document Assessor</P>
+<div class="login-page">
+	<div class="form">
+	  <form id="reg-form">
+		<input type="text" placeholder="username" id="username"/>
+		<input type="password" placeholder="password" id="password"/>
+		<button  type="submit" value="Submit Form">Register</button>
+		<p class="message">Already registered? click here to <a href="/">login</a></p>
+	  </form>
+	</div>
+  </div>
+ 
+</body>
+<script type="text/javascript" src="register.js"></script>
 </html>
