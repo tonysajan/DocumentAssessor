@@ -55,7 +55,10 @@ const Document = require("../model/document")
     try{
     const {id: taskId } = req.params
     
-    const user = await Task.findOne({ taskId });
+    const user = await Task.findOne({ 
+      task_id : taskId 
+      
+       });
    
     if(user.status == 'New'){
       const task = await Task.findOneAndUpdate({ task_id : taskId}, {status : "Inprogress"} );

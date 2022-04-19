@@ -24,5 +24,6 @@ const form = document.getElementById('login_form')
 					window.location.assign('/dashboard')
 				} else {
 					alert(result.error)
+					window.location.assign('/')
 				}
 			}

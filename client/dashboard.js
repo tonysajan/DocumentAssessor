@@ -40,7 +40,7 @@ function show(data) {
   <td>${r.amount_of_resources}</td> 
   <td>  <a href="${r.inst_pdf_link}">PDF</a>
   </td>
-  <td style="text-align :center !important; width:20%">
+  <td style="text-align :left !important; width:20%">
   <button style="border-radius: 10px; background:white; color:black;" onclick="onSignUp(this)">SignUp <i class="fa fa-sign-in"></i></button>
   </td>         
 </tr>`;}
@@ -51,7 +51,7 @@ else if (r.status=="Inprogress"){
   <td>${r.amount_of_resources}</td> 
   <td>  <a href="${r.inst_pdf_link}">PDF</a>
   </td>
-  <td style="text-align :center !important; width:20%">
+  <td style="text-align :left !important; width:20%">
   <button style="border-radius: 10px; background:white; color:orange;" onclick="onSignUp(this)">Continue <i class="fa fa-sign-in"></i></button>
   </td>         
 </tr>`;
@@ -63,7 +63,7 @@ else{
   <td>${r.amount_of_resources}</td> 
   <td>  <a href="${r.inst_pdf_link}">PDF</a>
   </td>
-  <td style="text-align :center !important; width:20%">
+  <td style="text-align :left !important; width:20%">
   <button style="border-radius: 10px; background:white; color:Green;" >Compeleted <i class="fa fa-check-circle-o" aria-hidden="true"></i>
   </button>
   </td>         
@@ -82,24 +82,19 @@ else{
       localStorage.setItem("row_index",Row_Index)
      getapi(api_url).then(result => {
       localStorage.setItem("task_id",result[Row_Index].task_id)
-    location.href = '/document'})
-   
+      const patchApiUrl = '/TaskStatusOnSignUp/' + result[Row_Index].task_id;
     patchApi(patchApiUrl);
-
-
+     })
      }
-     
-     const task_id1= localStorage.getItem("task_id")
-const patchApiUrl = '/TaskStatusOnSignUp/' + task_id1;
-
 const patchApi = async (req, res) => {
 	const response = await fetch(req, {
     method : 'PATCH',
     headers : {'Content-Type': 'application/json'},
 }).then(res => res.json())
 
-  if(response.status=='Inprogress')
+  if(response.status=='Inprogress'){
     console.log("task updated to inprogress")
+    location.href = '/document'}
 }
 
 
