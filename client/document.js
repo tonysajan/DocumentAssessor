@@ -1,19 +1,7 @@
 
 
 
-const task_id= localStorage.getItem("task_id")
-const patchApiUrl = '/TaskStatusOnSignUp/' + task_id;
-
-const patchApi = async (req, res) => {
-	const response = await fetch(req, {
-    method : 'PATCH',
-    headers : {'Content-Type': 'application/json'},
-}).then(res => res.json())
-
-	console.log(response);
-}
-
-patchApi(patchApiUrl);
+const task_id= localStorage.getItem("task_id");
 
   
   const getdocurl = '/document/'+ task_id  
@@ -22,7 +10,6 @@ patchApi(patchApiUrl);
     const response = await fetch(req);
     // Storing data in form of JSON
     var data = await response.json();
-    console.log(data);
    // const Row_Index='';
     
    show(data);
@@ -82,7 +69,6 @@ patchApi(patchApiUrl);
       
     if(Row_Index==0){
   location.href = '/form';
-  console.log("hello");
 }
 else {
   location.href = '/form2';

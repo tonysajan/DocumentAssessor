@@ -9,7 +9,7 @@ const submitAssessment = async (req, res) => {
         const result = await Assessment.create({assess_id : assessId, 
             answer1, answer2, answer3, answer4, answer5})
         res.status(200).json(result)
-        console.log('Assessment form submitted successfully: ', result)
+        console.log('Assessment form submitted successfully: ', result.assess_id)
     }catch(error){
             res.status(500).json(error.message)
     }

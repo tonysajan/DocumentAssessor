@@ -84,9 +84,25 @@ else{
       localStorage.setItem("task_id",result[Row_Index].task_id)
     location.href = '/document'})
    
- // getdocapi(api_url);
+    patchApi(patchApiUrl);
+
+
      }
      
+     const task_id1= localStorage.getItem("task_id")
+const patchApiUrl = '/TaskStatusOnSignUp/' + task_id1;
+
+const patchApi = async (req, res) => {
+	const response = await fetch(req, {
+    method : 'PATCH',
+    headers : {'Content-Type': 'application/json'},
+}).then(res => res.json())
+
+  if(response.status=='Inprogress')
+    console.log("task updated to inprogress")
+}
+
+
 
      function onRender (){
        location.href='/'
@@ -96,8 +112,12 @@ else{
         window.location= r;
       }
   
-
+      async function clickLogout(){
+        const result = await fetch('/logout').then(res => res.json())
+        localStorage.clear();
+        location.href = '/'
   
+      }
 
 
   

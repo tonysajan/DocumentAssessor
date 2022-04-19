@@ -33,7 +33,7 @@ const getRegisterationPage =  (req, res) => {
 const loginUser = async (req, res) => {
     const {username , password } = req.body
     const jwtExpirySeconds = 3600
-    console.log(req.body)
+    
     const db_user = await user.findOne({username}).lean()
 
     if (!db_user) {
@@ -88,7 +88,7 @@ const registerUser = async (req, res) => {
             password : new_password
         })
         res.json({ status : 'ok', user : new_User })
-        console.log('User created successfully: ', new_User)
+       
     }catch(error){
         if (error.code === 11000) {
 			// duplicate key

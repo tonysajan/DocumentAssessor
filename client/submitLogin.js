@@ -16,11 +16,9 @@ const form = document.getElementById('login_form')
 						password
 					})
 				}).then(res => res.json())
-				console.log('Login success : ', result.data)
-
+				
 				if (result.status === 'ok') {
 
-					console.log('Token generated : ', result.data)
 					localStorage.setItem('token', result.data)
 					alert('Login Success')
 					window.location.assign('/dashboard')

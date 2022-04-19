@@ -7,7 +7,7 @@ const Assessment = require("../model/assessment")
 const getDocumentsById = async (req, res) => {
   try{
   const {id: taskId } = req.params
-    console.log(taskId)
+    
   const docs = await Document.find({ task_id : taskId});
 
   if(!docs)
@@ -24,7 +24,6 @@ const getDocumentsById = async (req, res) => {
 const changeDocumentStatusToCompletetd = async (req, res) => {
   try{
   const {id: docId } = req.params
-    console.log(docId)
     
   if(Assessment.find({assess_id : docId}))
     {
