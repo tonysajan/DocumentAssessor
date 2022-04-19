@@ -80,3 +80,10 @@ else {
 function onRender (){
   location.href='/dashboard'
 }
+
+async function clickLogout(){
+  const result = await fetch('/logout').then(res => res.json())
+  localStorage.clear();
+  location.href = '/'
+
+}
