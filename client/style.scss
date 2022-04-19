@@ -20,10 +20,8 @@
     }
   }
 
-  
-  // global stuff
   body {
-  background: #0b2e60;/* fallback for old browsers */
+  background: #0b2e60;
     font-family: "Roboto", sans-serif;
     font-size: 13px;
     margin: 0;
@@ -179,6 +177,7 @@
   }
   
   button {
+    cursor: pointer;
     padding: 0.8em 1.2em;
     margin: 0 10px 0 0;
     width: auto;
@@ -244,77 +243,6 @@
       display: none;
     }
   }
-  
-  
-  .background {
-    font-weight:700;
-    vertical-align:middle;
-    position:relative;
-    color:white;
-    a {
-      color:white;
-      font-weight:400;
-      text-decoration:none;
-    }
-  
-    &__pass {
-      background-color: teal !important;
-    }
-    &__pending{
-      background-color: red !important;
-    }
-    &__Inprogress{
-      padding:0;
-      /* Progress Bar */
-      .progress {
-        position: relative;
-        height: 36px;
-        display: block;
-        width: 100%;
-        background-color: #da932c;
-        overflow: hidden; 
-  
-        .indeterminate {
-          background-color: #da932c; 
-  
-          &:before {
-            content: '';
-            position: absolute;
-            background-color: inherit;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            will-change: left, right;
-            animation: indeterminate 3.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite; 
-          }
-  
-        }
-      }
-  
-    }
-  }
-  
-  
-  @-webkit-keyframes indeterminate {
-    0% {
-      left: -35%;
-      right: 100%; }
-    60% {
-      left: 100%;
-      right: -90%; }
-    100% {
-      left: 100%;
-      right: -90%; } 
-  }
-  @keyframes indeterminate {
-    0% {
-      left: -35%;
-      right: 100%; }
-    60% {
-      left: 100%;
-      right: -90%; }
-    }
-  
 
 img {
   width: 100px;
@@ -331,9 +259,6 @@ img {
     padding: 5px;
     box-shadow: 0 2px 6px rgba(245, 240, 240, 0.1), 0 3px 6px rgba(245, 240, 240,0.1);
     cursor: pointer;
-
-
-  
 }
 
 .signUP{
@@ -342,6 +267,7 @@ img {
   font-size: 14px; 
   font-family: sans-serif; 
   font-weight: 100;
+  cursor: pointer;
 
 }
 
@@ -355,7 +281,6 @@ img {
   border-radius: 10px;
  
 }
-
 
 
 a {
@@ -386,6 +311,8 @@ $clr-link: #2962ff;
   border-radius: $radius;
   padding: 0.2rem 1rem;
   text-align: center;
+  cursor: pointer;
+
 
   &-pending {
     padding: 5px;
@@ -490,3 +417,49 @@ $clr-link: #2962ff;
       float: none;
     }
   }
+
+  .avatar{  overflow:hidden;   }
+
+.user-icon{
+  font-size:2em;  /* change font size should change size of icon */
+  float:left; margin:1em;  /* remove this line to avoid float/margin */
+}
+.user-icon{
+  border-radius:4em; border:1px solid skyblue;
+  height:6em; width:6em;  
+  background:none;padding:0.1em;  
+  margin-left: 40px;
+}
+
+.user-icon::before{
+  content:" "; display:block;
+  height:2em; width:2em;
+  background:skyblue;
+  position:relative; left:2em;top:0.8em;
+  border-radius:2em;
+}
+.user-icon::after{
+  content:" "; display:block;
+  height:2em;width:4em;
+  background:skyblue;
+  position:relative; left:1em;top:1em;
+  border-radius:2em 2em 0 0;
+}
+
+ .green{
+  display:block;
+  height:0em;width:0em;
+  background:none;
+  position:relative; left:3em;top:-2em;
+ }
+
+
+.green::after{
+  content:" "; display:block;
+  height:1em;width:1em;
+  position:relative; left:1.4em;top:0em;
+  }
+
+.green::after{background:green;border-radius:1em;}
+
+.font18{font-size:18px}

@@ -19,8 +19,10 @@ const getapi = async (req, res) => {
 getapi(api_url);
 
 
-
+// Dynamic table for task for particular user
 function show(data) {
+  document.getElementById("username").innerHTML = data[0].name;
+  localStorage.setItem("User_name",data[0].name)
   let tab = 
       
       `<tr>
