@@ -66,7 +66,7 @@ else{
   <td>  <a href="${r.inst_pdf_link}">PDF</a>
   </td>
   <td style="text-align :left !important; width:20%">
-  <button style="border-radius: 10px; background:white; color:Green;" >Compeleted <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+  <button style="border-radius: 10px; background:white; color:Green;" disabled >Compeleted <i class="fa fa-check-circle-o" aria-hidden="true"></i>
   </button>
   </td>         
 </tr>`;

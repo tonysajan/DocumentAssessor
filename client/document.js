@@ -45,7 +45,7 @@ const task_id= localStorage.getItem("task_id");
         <td style="width:80%"><button class="signUP" disabled><i class="fa fa-file-pdf-o" style="color: #00ff32;     padding: 10px;
         "></i>${r.name}</button></td>
         <td >
-        <p class="status status-done" onclick="Assesment(this)">${r.status}</p>
+        <p class="status status-done" disabled>${r.status}</p>
     
       </td>
            
