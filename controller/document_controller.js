@@ -3,11 +3,13 @@ const Document = require("../model/document")
 const Assessment = require("../model/assessment")
 
 
+//async function to get all the documents by id
 
 const getDocumentsById = async (req, res) => {
   try{
   const {id: taskId } = req.params
-    
+  
+  //get documents by task id
   const docs = await Document.find({ task_id : taskId});
 
   if(!docs)
@@ -21,12 +23,15 @@ const getDocumentsById = async (req, res) => {
 }
 
 
+ //async function to update the document status to completed
+
 const changeDocumentStatusToCompletetd = async (req, res) => {
   try{
   const {id: docId } = req.params
     
   if(Assessment.find({assess_id : docId}))
     {
+   // find and update the document status to completed
   const doc = await Document.findOneAndUpdate({ assess_id : docId}, {status : "Completed"} );
   if(!doc)
     return res.status(404).json({error: `No document with id: ${docId}`})
