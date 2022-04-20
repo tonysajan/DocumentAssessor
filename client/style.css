@@ -479,4 +479,9 @@ div.content {
 .font18 {
   font-size: 18px;
 }
+
+.form-header {
+  text-decoration: underline;
+  text-align: center;
+}
 /*# sourceMappingURL=style.css.map */

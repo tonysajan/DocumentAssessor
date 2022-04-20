@@ -2,9 +2,34 @@ function renderBack(){
     window.location="/document"
 }
 
+
+
 const assess_id= localStorage.getItem("assess_id");
 const task_id= localStorage.getItem("task_id");
+const row_index =localStorage.getItem("row_index1")
 //assesment submit fuction
+
+
+  const getdocurl = '/document/'+ task_id  
+  const getapi = async (req, res) => {
+    // Storing response
+    const response = await fetch(req);
+    // Storing data in form of JSON
+    var data = await response.json();
+    const pdf  = data[row_index].pdf_link;
+    const link = document.getElementById("pdf")
+    document.getElementById("pdf").innerHTML=pdf;
+    link.href = pdf 
+    return data;
+   
+  }
+  // Calling that async function
+  getapi(getdocurl);
+
+
+  
+
+
 const submit_form = document.getElementById('survey-form')
         submit_form.addEventListener('submit', assess_form)
 

@@ -14,7 +14,7 @@ const task_id= localStorage.getItem("task_id");
   // Calling that async function
   getapi(getdocurl);
 
-  document.getElementById("username").innerHTML = localStorage.getItem("User_name");;
+  document.getElementById("username").innerHTML = localStorage.getItem("User_name");
 
 
   //dynamic table fuction for documents

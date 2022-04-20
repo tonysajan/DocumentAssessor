@@ -5,7 +5,7 @@ const Document = new mongoose.Schema(
 		assess_id: {type: Number, required: true},
 		task_id: {type: Number, required: true},
 		name: {type: String, required: true},
-		pdf_link: {type: Number, required: true},
+		pdf_link: {type: String, required: true},
 		status: {type: String, required: true}
 
 	},
