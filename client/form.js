@@ -4,22 +4,17 @@ function renderBack(){
 
 const assess_id= localStorage.getItem("assess_id");
 const task_id= localStorage.getItem("task_id");
-
+//assesment submit fuction
 const submit_form = document.getElementById('survey-form')
         submit_form.addEventListener('submit', assess_form)
 
             async function assess_form(action){
                 action.preventDefault()
                 const answer1 = document.querySelector('input[name="source1"]:checked').value;
-                console.log(answer1)
                 const answer2 = document.querySelector('input[name="source2"]:checked').value;
-                console.log(answer2)
-                const answer3 = document.querySelector('input[name="source3"]:checked').value
-                console.log(answer3)
-                const answer4 = document.querySelector('input[name="source4"]:checked').value
-                console.log(answer4)
+                const answer3 = document.querySelector('input[name="source3"]:checked').value;
+                const answer4 = document.querySelector('input[name="source4"]:checked').value;
                 const answer5 = document.getElementById('feedback').value
-                console.log(answer4)
 
                const result = await fetch('/assessment-form/' + assess_id, {
                     method : 'POST',
@@ -29,7 +24,7 @@ const submit_form = document.getElementById('survey-form')
 
                 if (!result)
 					alert(result.error)
-                alert('Assessment form submitted successfully for document id :' + assess_id)
+                alert('Assessment form submitted successfully for document id : ' + assess_id)
 					
                 const doc_status = await fetch('/documentStatusCompleted/' + assess_id, {
                     method : 'PATCH',
