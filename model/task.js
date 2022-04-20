@@ -7,10 +7,12 @@ const Task = new mongoose.Schema(
 		task_id: {type: Number, required: true},
 		task_name: {type: String, required: true},
 		description: {type: String, required: true},
-		username: {type: String, required: true},
 		amount_of_resources: {type: Number, required: true},
-		resources_completed: {type: Number, required: true},
-		status: {type: String, required: true}
+		status: {type: String, required: true},
+		username: {type: String, required: true},
+		inst_pdf_link: {type: String, required: true},
+		name: {type: String, required: true},
+		
 
 	},
     { collection: 'task_list' }
