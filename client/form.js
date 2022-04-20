@@ -2,8 +2,33 @@ function renderBack(){
     window.location="/document"
 }
 
+
+
 const assess_id= localStorage.getItem("assess_id");
 const task_id= localStorage.getItem("task_id");
+const row_index =localStorage.getItem("row_index1")
+//assesment submit fuction
+
+
+  const getdocurl = '/document/'+ task_id  
+  const getapi = async (req, res) => {
+    // Storing response
+    const response = await fetch(req);
+    // Storing data in form of JSON
+    var data = await response.json();
+    const pdf  = data[row_index].pdf_link;
+    const link = document.getElementById("pdf")
+    document.getElementById("pdf").innerHTML=pdf;
+    link.href = pdf 
+    return data;
+   
+  }
+  // Calling that async function
+  getapi(getdocurl);
+
+
+  
+
 
 const submit_form = document.getElementById('survey-form')
         submit_form.addEventListener('submit', assess_form)
@@ -11,15 +36,10 @@ const submit_form = document.getElementById('survey-form')
             async function assess_form(action){
                 action.preventDefault()
                 const answer1 = document.querySelector('input[name="source1"]:checked').value;
-                console.log(answer1)
                 const answer2 = document.querySelector('input[name="source2"]:checked').value;
-                console.log(answer2)
-                const answer3 = document.querySelector('input[name="source3"]:checked').value
-                console.log(answer3)
-                const answer4 = document.querySelector('input[name="source4"]:checked').value
-                console.log(answer4)
+                const answer3 = document.querySelector('input[name="source3"]:checked').value;
+                const answer4 = document.querySelector('input[name="source4"]:checked').value;
                 const answer5 = document.getElementById('feedback').value
-                console.log(answer4)
 
                const result = await fetch('/assessment-form/' + assess_id, {
                     method : 'POST',
@@ -29,7 +49,7 @@ const submit_form = document.getElementById('survey-form')
 
                 if (!result)
 					alert(result.error)
-                alert('Assessment form submitted successfully for document id :' + assess_id)
+                alert('Assessment form submitted successfully for document id : ' + assess_id)
 					
                 const doc_status = await fetch('/documentStatusCompleted/' + assess_id, {
                     method : 'PATCH',

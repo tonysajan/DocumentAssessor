@@ -19,8 +19,10 @@ const getapi = async (req, res) => {
 getapi(api_url);
 
 
-
+// Dynamic table for task for particular user
 function show(data) {
+  document.getElementById("username").innerHTML = data[0].name;
+  localStorage.setItem("User_name",data[0].name)
   let tab = 
       
       `<tr>
@@ -64,7 +66,7 @@ else{
   <td>  <a href="${r.inst_pdf_link}">PDF</a>
   </td>
   <td style="text-align :left !important; width:20%">
-  <button style="border-radius: 10px; background:white; color:Green;" >Compeleted <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+  <button style="border-radius: 10px; background:white; color:Green;" disabled >Compeleted <i class="fa fa-check-circle-o" aria-hidden="true"></i>
   </button>
   </td>         
 </tr>`;

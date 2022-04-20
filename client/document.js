@@ -1,9 +1,5 @@
 
-
-
 const task_id= localStorage.getItem("task_id");
-
-  
   const getdocurl = '/document/'+ task_id  
   const getapi = async (req, res) => {
     // Storing response
@@ -18,8 +14,10 @@ const task_id= localStorage.getItem("task_id");
   // Calling that async function
   getapi(getdocurl);
 
+  document.getElementById("username").innerHTML = localStorage.getItem("User_name");
 
 
+  //dynamic table fuction for documents
   function show(data) {
     let tab = 
         
@@ -47,7 +45,7 @@ const task_id= localStorage.getItem("task_id");
         <td style="width:80%"><button class="signUP" disabled><i class="fa fa-file-pdf-o" style="color: #00ff32;     padding: 10px;
         "></i>${r.name}</button></td>
         <td >
-        <p class="status status-done" onclick="Assesment(this)">${r.status}</p>
+        <p class="status status-done" disabled>${r.status}</p>
     
       </td>
            
@@ -58,7 +56,7 @@ const task_id= localStorage.getItem("task_id");
     if(tab)
     document.getElementById("Document").innerHTML = tab;
   }
-
+// assesment fuction to do assessing
   function Assesment (element){
     const rowJavascript = element.parentNode.parentNode;
    const   Row_Index1 = rowJavascript.rowIndex - 1;
@@ -80,7 +78,7 @@ else {
 function onRender (){
   location.href='/dashboard'
 }
-
+// logout fuction
 async function clickLogout(){
   const result = await fetch('/logout').then(res => res.json())
   localStorage.clear();
